@@ -5,18 +5,94 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Mis compras</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <script src='js/bootstrap.min.js'></script>
 </head>
 <body>
-   <center><h1>Ofertas de la Semana</h1></center>
-   <img src="images/ofertas.png">
-   <img src="images/ofertas2.png" alt="no carga" width="150" height="150">
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+            <h1>gestion de compra</h1>
+            <form method="get" action="gestion_compra.html">
+                datos de facturacion
+                <hr>
+                <table style="background-color: aqua;">
+                    <tr>
+                        <td align="right"><label>Nombre: </label></td>
+                        <td><input type="text" class="form-control" name="nombre"></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label>Apellido: </label></td>
+                        <td><input type="text" class="form-control" name="apellido"></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label>Direccion: </label></td>
+                        <td><input type="text" class="form-control" name="dire"></td>
+                    </tr>
+                   <tr>
+                       <td align="right"><label>Medio de pago:</label></td>
+                       <td> 
+                           <select class="form-select">
+                                <option>MercadoPago</option>
+                                <option>Transf. bancaria</option>
+                                <option>Targeta de credio</option>
+                                <option>Neteller</option>
+                            </select>
+                        </td>
+                   </tr>
+                </table>
+                <hr>
+                Datos para el pago
+                <table style="background-color: aqua;">
+                    <tr>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Titular">
+                            <label for="floatingInput">Titular</label>
+                          </div>
+                    </tr>
+                    <tr>
+                        <td align="right"><label>Fecha de vencimiento: </label></td>
+                        <td><input type="date" name="fecha"></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label>Numero: </label></td>
+                        <td><input type="text" name="numero" class="form-control"></td>
+                    </tr>
+                   <tr>
+                       <td align="right"><label>Codigo de seguridad</label></td>
+                       <td><input type="password" name="codigo" class="form-control"> </td>
+                   </tr>
+                </table>
+                <br>
+           
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" value="confirmar">
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
+   <h1 class="display-4">Ofertas de la Semana</h1>
+   <img src="images/ofertas.png" class="rounded float-start" width="200" height="150">
+   <img src="images/ofertas2.png" alt="no carga" class="rounded float-end" width="200" height="150">
    <hr>
-   Tabla de ofertas
+   <div class="container-sm"><p class="h2">Tabla de ofertas</p></div>
    <br>
-   <table border="2">
-       <thead style="background-color: burlywood;">
+   <table border="2" class="table table-hover">
+       <thead >
            <tr>
                <td><center>Articulo</center></td>
                <td><center>precio</center></td>
@@ -29,13 +105,17 @@
                <td>Placa de video</td>
                <td>$500</td>
                <td><center><img src="images/placavideo.png" width="100" height="50"></center></td>
-               <td><a href="procesar_compra.html">comprar</a></td>
+               <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Comprar
+              </button></td>
            </tr>
            <tr>
                 <td>Memoria Ram</td>
                 <td>$250</td>
                 <td><center><img src="images/ram.png" width="100" height="50"></center> </td>
-                <td><a href="#">comprar</a></td>
+                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Comprar
+                  </button></td>
             </tr>
        </tbody>
    </table>
