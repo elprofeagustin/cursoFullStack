@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="css/login.css" type="text/css" />
+<script src="js/funciones_login.js"></script>
 <title>Inicio de Sesion</title>
 </head>
 
@@ -21,9 +22,10 @@
 
     <!-- Login Form -->
     <form action="compra.html" method="post">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" required>
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" required>
       <input type="submit" class="fadeIn fourth" value="INGRESAR">
+      <input type="button" value="dame_datos" onclick="dame_datos()">
     </form>
 
     <!-- Remind Passowrd -->
