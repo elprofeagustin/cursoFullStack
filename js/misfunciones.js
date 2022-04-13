@@ -30,3 +30,22 @@ function dame_palabra(n)
    alert(n.toLowerCase());
 
 }
+function datos_pago()
+{
+  let n_c = document.getElementById("nombre").value;
+  let mifecha = new Date();
+  let venta = {
+     cliente: n_c,
+     importe: 500,
+     fecha: mifecha,
+     producto : 'placa de video'
+  };
+  console.log("datos de la venta");
+  console.log("cliente: " + venta.cliente);
+  console.log("fecha: " + venta.fecha);
+
+}
+function pintar(col) {
+   alert("cambio boton");
+   document.getElementById('btn1').style.backgroundColor = col;
+}
