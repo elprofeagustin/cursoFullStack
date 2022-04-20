@@ -78,7 +78,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" onclick="datos_pago()" data-bs-dismiss="modal">Confirmar</button>
+          <button type="button" onclick="generarventa()" data-bs-dismiss="modal">Pagar</button>
         </div>
     </form>
       </div>
@@ -104,22 +104,25 @@
        <tbody>
            <tr>
                <td>Placa de video</td>
-               <td>$500</td>
+               <td><input type="text" name="precio" value="$500" readonly></td>
                <td><center><img src="images/placavideo.png" width="100" height="50"></center></td>
-               <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Comprar
+               <td><button type="button" class="btn btn-primary" onclick="agregarproducto(500,'Placa de video')">
+                Agregar
               </button></td>
            </tr>
            <tr>
                 <td>Memoria Ram</td>
-                <td>$250</td>
+                <td><input type="text" name="precio" value="$250" readonly></td>
                 <td><center><img src="images/ram.png" width="100" height="50"></center> </td>
-                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Comprar
+                <td><button type="button" class="btn btn-primary" onclick="agregarproducto(250,'Memoria Ram')">
+                    Agregar
                   </button></td>
             </tr>
        </tbody>
    </table>
-   nombre: <input type="text" id="n1">
+   <input type="button" value="prueba" onclick="juegodearreglos()">
+   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Confirmar compra
+  </button>
 </body>
 </html>
