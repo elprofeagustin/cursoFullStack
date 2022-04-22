@@ -78,7 +78,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" onclick="generarventa()" data-bs-dismiss="modal">Pagar</button>
+          <button type="button" data-bs-dismiss="modal" id="pagar">Pagar</button>
         </div>
     </form>
       </div>
@@ -96,7 +96,7 @@
        <thead >
            <tr>
                <td><center>Articulo</center></td>
-               <td><center>precio</center></td>
+               <td><center>precio y cantidad a comprar</center></td>
                <td><center>imagen</center></td>
                <td><img src="images/comprador.gif" width="70" height="50"></td>
            </tr>
@@ -104,23 +104,40 @@
        <tbody>
            <tr>
                <td>Placa de video</td>
-               <td><input type="text" name="precio" value="$500" readonly></td>
+               <td>$500</td>
                <td><center><img src="images/placavideo.png" width="100" height="50"></center></td>
-               <td><button type="button" class="btn btn-primary" onclick="agregarproducto(500,'Placa de video')">
-                Agregar
-              </button></td>
+               <td>
+                    <button type="button" onclick="agregarproducto(500,'Placa de video')">
+                    <img src="images/mas.png">
+                    <button type="button" onclick="quitararticulo(500)">
+                    <img src="images/menos.png">
+                    </button>
+               </td>
            </tr>
            <tr>
                 <td>Memoria Ram</td>
                 <td><input type="text" name="precio" value="$250" readonly></td>
                 <td><center><img src="images/ram.png" width="100" height="50"></center> </td>
-                <td><button type="button" class="btn btn-primary" onclick="agregarproducto(250,'Memoria Ram')">
+                <td>
+                        <button type="button" onclick="agregarproducto(250,'Memoria Ram')">
+                        <img src="images/mas.png">
+                        <button type="button" onclick="quitararticulo(250)">
+                        <img src="images/menos.png">
+                        </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Disco Solido 450GB</td>
+                <td><input type="text" name="precio" value="$850" readonly></td>
+                <td><center><img src="images/discosolido.png" width="100" height="50"></center> </td>
+                <td><button type="button" class="btn btn-primary" onclick="agregarproducto(850,'Disco solido 450gb')">
                     Agregar
                   </button></td>
             </tr>
        </tbody>
    </table>
-   <input type="button" value="prueba" onclick="juegodearreglos()">
+   cantidad a comprar:
+   <input type="text" readonly id="c1">
    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Confirmar compra
   </button>
